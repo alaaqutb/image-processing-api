@@ -16,13 +16,12 @@ image.get('/', (req, res) => {
     const heightpars:number=parseInt(height);
 
 
-    console.log(widthpars);
-    console.log(heightpars);
+    //console.log(widthpars);
+    //console.log(heightpars);
     sharp(`./images/full/${name}.jpg`).resize(widthpars,heightpars).toFile(`./images/thumb/${name}_${widthpars}_${heightpars}.jpg`);
     res.sendFile(path.join(__dirname+`/../../../images/thumb/${name}_${widthpars}_${heightpars}.jpg`));
  }
   );
 export default image ;
-
 
 
