@@ -23,6 +23,7 @@
   "homepage": "https://github.com/alaaqutb/image-processing-api#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "express-validator": "^6.14.2",
     "sharp": "^0.30.6"
   },
   "devDependencies": {
