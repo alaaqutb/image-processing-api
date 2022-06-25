@@ -2,6 +2,7 @@ import { query } from 'express-validator';
 
 const validation = [
   query('width')
+    .optional()
     .isInt()
     .withMessage('Invaild width!')
     .custom((value) => {
@@ -9,6 +10,7 @@ const validation = [
     }),
 
   query('height')
+    .optional()
     .isInt()
     .withMessage('Invaild height!')
     .custom((value) => {

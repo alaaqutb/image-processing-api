@@ -1,5 +1,5 @@
 import express from 'express';
-import routes from './routes/api';
+import routes from './routes';
 
 // const thumbDir = path.resolve(__dirname, './../images/thumb');
 const app = express();
