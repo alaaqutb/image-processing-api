@@ -1,15 +1,13 @@
 import express from 'express';
 import { validationResult } from 'express-validator';
 const image: express.Router = express.Router();
-import sharp from 'sharp';
 import path from 'path';
 import validation from './imageValidation';
-//import { promises as fs } from 'fs';
 import { getImage } from './get';
 import { getThumb } from './get';
 import { getResize } from './get';
 
-const handleApi = async (
+const handleRequest = async (
   req: express.Request,
   res: express.Response
 ): Promise<void> => {
@@ -70,5 +68,5 @@ const handleApi = async (
     res.status(200).json({ response: 'Invalid image name!' });
   }
 };
-image.get('/', validation, handleApi);
+image.get('/', validation, handleRequest);
 export default image;
