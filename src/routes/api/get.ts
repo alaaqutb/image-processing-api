@@ -2,11 +2,11 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import sharp from 'sharp';
 
-export const fullDir = path.resolve(__dirname, './../../../images/full');
-export const thumbDir = path.resolve(__dirname, './../../../images/thumb');
+export const full = path.resolve(__dirname, './../../../images/full');
+export const thumb = path.resolve(__dirname, './../../../images/thumb');
 
 export const getImage = async (name: string): Promise<string | null> => {
-  const imagePath = path.resolve(fullDir, `${name}.jpg`);
+  const imagePath = path.resolve(full, `${name}.jpg`);
   try {
     await fs.access(imagePath);
     return imagePath;
@@ -21,7 +21,7 @@ export const getThumb = async (
   heightpars: number
 ): Promise<string | null> => {
   const thumbPath = path.resolve(
-    thumbDir,
+    thumb,
     `${name}_${widthpars}_${heightpars}.jpg`
   );
   try {
