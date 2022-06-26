@@ -2,8 +2,8 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import sharp from 'sharp';
 
-const fullDir = path.resolve(__dirname, './../../../images/full');
-const thumbDir = path.resolve(__dirname, './../../../images/thumb');
+export const fullDir = path.resolve(__dirname, './../../../images/full');
+export const thumbDir = path.resolve(__dirname, './../../../images/thumb');
 
 export const getImage = async (name: string): Promise<string | null> => {
   const imagePath = path.resolve(fullDir, `${name}.jpg`);
@@ -38,8 +38,8 @@ export const getResize = async (
   widthpars: number,
   heightpars: number
 ): Promise<string | null> => {
-  await sharp(source).resize(widthpars, heightpars).toFile(target);
   try {
+    await sharp(source).resize(widthpars, heightpars).toFile(target);
     return target;
   } catch {
     return null;

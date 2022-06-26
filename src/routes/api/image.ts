@@ -33,9 +33,9 @@ const handleRequest = async (
     `${name}_${widthpars}_${heightpars}.jpg`
   );
   console.log(target);
-  if (name) {
+  if (await getImage(name)) {
     console.log(name);
-    if (widthpars || heightpars) {
+    if (widthpars && heightpars) {
       console.log(widthpars, heightpars);
       const thumb = await getThumb(
         name as string,

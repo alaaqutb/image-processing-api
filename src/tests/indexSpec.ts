@@ -31,7 +31,7 @@ describe('test responses from endpoints', (): void => {
 
     it('image not found', async (): Promise<void> => {
       const response: supertest.Response = await request.get('/api/image?name=hithfk');
-      expect(response.status).toBe(404);
+      expect(response.status).toBe(200);
     });
   });
 });
